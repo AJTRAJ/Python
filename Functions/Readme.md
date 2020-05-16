@@ -1,11 +1,16 @@
-Functions
-def
-print function
-range function
-type function
-Variable Scope
+# <a name="functions"></a>Functions
 
-def
+* [def](#def)
+* [print function](#print-function)
+* [range function](#range-function)
+* [type function](#type-function)
+* [Variable Scope](#variable-scope)
+
+<br>
+
+### <a name="def"></a>def
+
+```python
 #!/usr/bin/python3
 
 # ----- function without arguments -----
@@ -30,15 +35,19 @@ def num_square(num):
 my_num = 3
 print(num_square(2))
 print(num_square(my_num))
-The def keyword is used to define functions
-Functions have to be defined before use
-A common syntax error is leaving out : at end of def statement
-Block of code for functions, control structures, etc are distinguished by indented code
-4-space indentation is recommended
-Python docs - Coding Style
-The default return value is None
-How variables are passed to functions in Python
-format is covered in next topic
+```
+
+* The `def` keyword is used to define functions
+* Functions have to be defined before use
+* A common syntax error is leaving out `:` at end of `def` statement
+* Block of code for functions, control structures, etc are distinguished by indented code
+    * 4-space indentation is recommended
+    * [Python docs - Coding Style](https://docs.python.org/3/tutorial/controlflow.html#intermezzo-coding-style)
+* The default `return` value is `None`
+* [How variables are passed to functions in Python](http://robertheaton.com/2014/02/09/pythons-pass-by-object-reference-as-explained-by-philip-k-dick/)
+* `format` is covered in next topic
+
+```
 $ ./functions.py 
 -----------------------------
          Hello World         
@@ -46,8 +55,11 @@ $ ./functions.py
 3 + 4 = 7
 4
 9
-Default valued arguments
+```
 
+**Default valued arguments**
+
+```python
 #!/usr/bin/python3
 
 # ----- function with default valued argument -----
@@ -64,7 +76,11 @@ greeting('*')
 
 print("\nStyle character =")
 greeting(style_char='=')
-Often, functions can have a default behavior and if needed changed by passing relevant argument
+```
+
+* Often, functions can have a default behavior and if needed changed by passing relevant argument
+
+```
 $ ./functions_default_arg_value.py 
 Default style
 -----------------------------
@@ -80,25 +96,36 @@ Style character =
 =============================
          Hello World         
 =============================
-Triple quoted comment describing function purpose is a usually followed guideline
-To avoid distraction from example code, docstrings for programs and functions won't be generally used in this tutorial
-See Docstrings chapter for examples and discussion
+```
+
+* Triple quoted comment describing function purpose is a usually followed guideline 
+* To avoid distraction from example code, docstrings for programs and functions won't be generally used in this tutorial
+    * See [Docstrings](./Docstrings.md) chapter for examples and discussion
+
+```python
 def num_square(num):
     """
     returns square of number
     """
 
     return num * num
-Further Reading
+```
+
+**Further Reading**
 
 There are many more ways to call a function and other types of declarations, refer the below links for more info
 
-Python docs - defining functions
-Python docs - Built-in Functions
+* [Python docs - defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+* [Python docs - Built-in Functions](https://docs.python.org/3/library/functions.html)
 
-print function
-By default, print function adds newline character
-This can be changed by passing our own string to the end argument
+<br>
+
+### <a name="print-function"></a>print function
+
+* By default, `print` function adds newline character
+* This can be changed by passing our own string to the `end` argument
+
+```python
 >>> print("hi")
 hi
 >>> print("hi", end='')
@@ -106,8 +133,12 @@ hi>>>
 >>> print("hi", end=' !!\n')
 hi !!
 >>> 
-The help function can be used to get quick help from interpreter itself
-Press q to return back from help page
+```
+
+* The [help](https://docs.python.org/3/library/functions.html#help) function can be used to get quick help from interpreter itself
+* Press `q` to return back from help page
+
+```python
 >>> help(print)
 
 Help on built-in function print in module builtins:
@@ -121,8 +152,12 @@ print(...)
     sep:   string inserted between values, default a space.
     end:   string appended after the last value, default a newline.
     flush: whether to forcibly flush the stream.
-Multiple arguments to print function can be passed by , separation
-The default sep is single space character
+```
+
+* Multiple arguments to `print` function can be passed by `,` separation
+* The default `sep` is single space character
+
+```python
 >>> a = 5
 >>> b = 2
 
@@ -135,8 +170,12 @@ The default sep is single space character
 >>> print(a+b, a-b, sep='\n')
 7
 3
-When printing variables, the str method is called which gives the string representation
-So, explicit conversion is not needed unless concatenation is required
+```
+
+* When printing variables, the [__str__](https://docs.python.org/3/reference/datamodel.html#object.__str__) method is called which gives the string representation
+* So, explicit conversion is not needed unless concatenation is required
+
+```python
 >>> greeting = 'Hello World'
 >>> print(greeting)
 Hello World
@@ -156,7 +195,11 @@ TypeError: Can't convert 'int' object to str implicitly
 
 >>> print("She bought " + str(num) + " apples")
 She bought 42 apples
-As an alternative, use multiple arguments and change sep accordingly
+```
+
+* As an alternative, use multiple arguments and change `sep` accordingly
+
+```python
 >>> print("She bought", num, "apples")
 She bought 42 apples
 
@@ -166,12 +209,20 @@ No. of items: 15
 
 >>> print("No. of items:", items, sep='')
 No. of items:15
-To redirect print output to stderr instead of default stdout, change the file argument
-See also sys.exit()
+```
+
+* To redirect print output to [stderr](https://stackoverflow.com/questions/3385201/confused-about-stdin-stdout-and-stderr) instead of default stdout, change the `file` argument
+* See also [sys.exit()](https://docs.python.org/3/library/sys.html#sys.exit)
+
+```python
 >>> import sys
 >>> print("Error!! Not a valid input", file=sys.stderr)
 Error!! Not a valid input
-str.format() can be used to style strings and handle multiple variables more elegantly than string concatenation
+```
+
+* `str.format()` can be used to style strings and handle multiple variables more elegantly than string concatenation
+
+```python
 >>> num1 = 42
 >>> num2 = 7
 
@@ -188,14 +239,22 @@ str.format() can be used to style strings and handle multiple variables more ele
 # and of course the expression can be used inside print directly
 >>> print('{} + {} = {}'.format(num1, num2, num1 + num2))
 42 + 7 = 49
-using numbered arguments
+```
+
+* using numbered arguments
+
+```python
 >>> num1
 42
 >>> num2
 7
 >>> print("{0} + {1} * {0} = {2}".format(num1, num2, num1 + num2 * num1))
 42 + 7 * 42 = 336
-number formatting - specified using optional argument number, followed by : and then the formatting style
+```
+
+* number formatting - specified using optional argument number, followed by `:` and then the formatting style
+
+```python
 >>> appx_pi = 22 / 7
 >>> appx_pi
 3.142857142857143
@@ -216,7 +275,11 @@ number formatting - specified using optional argument number, followed by : and 
 # zero filling
 >>> print("{0:08.3f}".format(appx_pi))
 0003.143
-different base
+```
+
+* different base
+
+```python
 >>> print("42 in binary = {:b}".format(42))
 42 in binary = 101010
 >>> print("42 in octal = {:o}".format(42))
@@ -243,9 +306,13 @@ different base
 42
 >>> int('0x2a', base=16)
 42
-similar to the r raw string prefix, using f prefix allows to represent format strings
-introduced in Python v3.6
-similar to str.format(), the variables/expressions are specified within {}
+```
+
+* similar to the `r` raw string prefix, using `f` prefix allows to represent format strings
+    * introduced in Python v3.6
+* similar to `str.format()`, the variables/expressions are specified within `{}`
+
+```python
 >>> num1 = 42
 >>> num2 = 7
 >>> f'{num1} + {num2} = {num1 + num2}'
@@ -261,19 +328,26 @@ similar to str.format(), the variables/expressions are specified within {}
 '14'
 >>> f'{20:#x}'
 '0x14'
-Further Reading
+```
 
-Python docs - formatstrings - for more info and examples
-Python docs - f-strings - for more examples and caveats
+**Further Reading**
 
-range function
-By default start=0 and step=1, so they can be skipped or defined as appropriate
-range(stop)
-range(start, stop)
-range(start, stop, step)
-Note that range output doesn't include stop value - it is always upto stop value but not including it
-See Lists chapters for discussion and examples on lists
-Python docs - Ranges - for more info and examples
+* [Python docs - formatstrings](https://docs.python.org/3/library/string.html#formatstrings) - for more info and examples
+* [Python docs - f-strings](https://docs.python.org/3/reference/lexical_analysis.html#f-strings) - for more examples and caveats
+
+<br>
+
+### <a name="range-function"></a>range function
+
+* By default `start=0` and `step=1`, so they can be skipped or defined as appropriate
+    * `range(stop)`
+    * `range(start, stop)`
+    * `range(start, stop, step)`
+* Note that `range` output doesn't include `stop` value - it is always upto `stop` value but not including it
+* See [Lists](./Lists.md) chapters for discussion and examples on lists
+* [Python docs - Ranges](https://docs.python.org/3/library/stdtypes.html#typesseq-range) - for more info and examples
+
+```python
 >>> range(5)
 range(0, 5)
 
@@ -288,10 +362,15 @@ range(0, 5)
 
 >>> list(range(10, -5, -2))
 [10, 8, 6, 4, 2, 0, -2, -4]
+```
 
-type function
+<br>
+
+### <a name="type-function"></a>type function
+
 Useful to check data type of a variable or value
 
+```python
 >>> type(5)
 <class 'int'>
 
@@ -312,8 +391,13 @@ Useful to check data type of a variable or value
 [0, 1, 2, 3]
 >>> type(arr)
 <class 'list'>
+```
 
-Variable Scope
+<br>
+
+### <a name="variable-scope"></a>Variable Scope
+
+```python
 #!/usr/bin/python3
 
 def print_num():
@@ -321,12 +405,19 @@ def print_num():
 
 num = 25
 print_num()
-Variables defined before function call are visible within the function scope too
-Python docs - Default Argument Values - see description for when default values are evaluated
+```
+
+* Variables defined before function call are visible within the function scope too 
+* [Python docs - Default Argument Values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values) - see description for when default values are evaluated
+
+```
 $ ./variable_scope_1.py 
 Yeehaw! num is visible in this scope, its value is: 25
+```
+
 What happens when a variable declared within a block is used outside of it?
 
+```python
 #!/usr/bin/python3
 
 def square_of_num(num):
@@ -334,14 +425,21 @@ def square_of_num(num):
 
 square_of_num(5)
 print("5 * 5 = {}".format(sqr_num))
-Here, sqr_num is declared inside square_of_num function and not accessible outside the block
+```
+
+* Here, `sqr_num` is declared inside `square_of_num` function and not accessible outside the block
+
+```
 $ ./variable_scope_2.py 
 Traceback (most recent call last):
   File "./variable_scope_2.py", line 7, in <module>
     print("5 * 5 = {}".format(sqr_num))
 NameError: name 'sqr_num' is not defined
-One way to overcome this is to use the global keyword
+```
 
+One way to overcome this is to use the `global` keyword
+
+```python
 #!/usr/bin/python3
 
 def square_of_num(num):
@@ -350,11 +448,18 @@ def square_of_num(num):
 
 square_of_num(5)
 print("5 * 5 = {}".format(sqr_num))
-Now, we can access sqr_num even outside the function definition
+```
+
+* Now, we can access `sqr_num` even outside the function definition
+
+```
 $ ./variable_scope_3.py
 5 * 5 = 25
+```
+
 If a variable name is same outside and within function definition, the one inside the function will stay local to the block and not affect the one outside of it
 
+```python
 #!/usr/bin/python3
 
 sqr_num = 4
@@ -365,11 +470,17 @@ def square_of_num(num):
 
 square_of_num(5)
 print("Whoops! sqr_num is still {}!".format(sqr_num))
-Note that using global sqr_num will affect the sqr_num variable outside the function
+```
+
+* Note that using `global sqr_num` will affect the `sqr_num` variable outside the function
+
+```
 $ ./variable_scope_4.py 
 5 * 5 = 25
 Whoops! sqr_num is still 4!
-Further Reading
+```
 
-Python docs - scope example
-Python docs - global statement
+**Further Reading**
+
+* [Python docs - scope example](https://docs.python.org/3/tutorial/classes.html#scopes-and-namespaces-example)
+* [Python docs - global statement](https://docs.python.org/3/reference/simple_stmts.html#the-global-statement)

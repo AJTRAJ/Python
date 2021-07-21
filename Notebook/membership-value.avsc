@@ -1,0 +1,2143 @@
+{
+  "type": "record",
+  "name": "Membership",
+  "namespace": "com.optum.exts.eligibility.model",
+  "doc": "v3.03 -- Represents a domain model for Membership",
+  "fields": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "applicationIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "areaGroup",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "bookOfBusiness",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "DescriptionType",
+          "namespace": "com.optum.exts.eligibility.model.common",
+          "fields": [
+            {
+              "name": "code",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "description",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            }
+          ]
+        }
+      ],
+      "doc": "A categorization for an individual Membership record (e.g., Oxford, Level Funded, etc.).",
+      "default": null
+    },
+    {
+      "name": "brandIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "brandName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "businessSegment",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "calap",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "CALAP",
+          "doc": "California Language Assistance Program",
+          "namespace": "com.optum.exts.eligibility.model.membership",
+          "fields": [
+            {
+              "name": "calapIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Indicates if the Policy for this membership record is impacted by the CA Language Assistance Program.  Y or N.",
+              "default": null
+            },
+            {
+              "name": "externalHealthPlanIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Indicates if the Health Plan for this membership record is external.  Y or N.",
+              "default": null
+            },
+            {
+              "name": "hmoPlanIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Indicates if the Policy for this membership record is an HMO.  Y or N.",
+              "default": null
+            },
+            {
+              "name": "sourceSytemCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Source system code for the source of CALAP information.",
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "cancelReasonType",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "doc": "Reason coverage was cancelled.",
+      "default": null
+    },
+    {
+      "name": "claimSystemType",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "coverageLevel",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "coveragePaidThruDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "coveragePaidThruReason",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "coverageStatus",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "creationDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "customerAccount",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "CustomerAccount",
+          "namespace": "com.optum.exts.eligibility.model",
+          "fields": [
+            {
+              "name": "businessArrangement",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "customerAccountIdentifier",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "description",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "hsaAffirmationIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Indicates that the employee has provided a wet signature. Used only if an employer is authorized by Exante Bank to capture a wet signature on its behalf.",
+              "default": null
+            },
+            {
+              "name": "hsaElectronicSignatureIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Used only if an employer is authorized by Exante Bank to capture an electronic signature on its behalf.",
+              "default": null
+            },
+            {
+              "name": "hsaWetSignatureIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Used only if an employer is authorized by Exante Bank to capture a wet (physical) signature on its behalf.",
+              "default": null
+            },
+            {
+              "name": "lineOfBusiness",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "doc": "The customer account line of business. E.g., EI, MR, CS, Global.",
+              "default": null
+            },
+            {
+              "name": "obligor",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "policySuffixCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "sharedArrangement",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "customerAccountIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "customerPurchaseEffectiveDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Effective date for the memberships's Customer Purchase record. Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "customerPurchaseIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "customerPurchaseOptionIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Identifier for a group of plan purchases.",
+      "default": null
+    },
+    {
+      "name": "customerPurchaseTerminationDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Termination date for the memberships's Customer Purchase record. Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "differentFamilyMemberAddressIndicator",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Indicates that this member's address is different from the rest of the family.",
+      "default": null
+    },
+    {
+      "name": "divisionCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "effectiveDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "eligibilityGracePeriodThruDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "eligibilitySystemType",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "employerIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "enrolleeMemberFacingIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "External facing identifier, such as an ID printed on a membership card, used to identify a member, at the level of the enrollee.",
+      "default": null
+    },
+    {
+      "name": "enrolleeSourceCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "enrolleeSourceId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "erisaIndicator",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Employee Retirement Income Security Act (ERISA) Indicator.",
+      "default": null
+    },
+    {
+      "name": "financialAccount",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "FinancialAccount",
+          "namespace": "com.optum.exts.eligibility.model.membership",
+          "fields": [
+            {
+              "name": "benefitStatus",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "customerId",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "financePolicyNumber",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "financePolicySuffixCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "hsaIndicator",
+              "type": "boolean",
+              "default": false
+            },
+            {
+              "name": "iPlanIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "identifier",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "productSubcategoryType",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "raiderOnlyIndicator",
+              "type": "boolean",
+              "default": false
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "hContractId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "healthProgramCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "holdReason",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "HoldReason",
+            "namespace": "com.optum.exts.eligibility.model.membership",
+            "fields": [
+              {
+                "name": "effectiveDate",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "doc": "The start date for the hold.",
+                "default": null
+              },
+              {
+                "name": "holdLevel",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "doc": "Specifies which domain the hold applies to. Ex: member, group, organization, etc.",
+                "default": null
+              },
+              {
+                "name": "holdNote",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "doc": "Free form text allowing user to describe the reason or other pertinent information for the hold.",
+                "default": null
+              },
+              {
+                "name": "holdReasonRestriction",
+                "type": [
+                  "null",
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "record",
+                      "name": "HoldReasonRestriction",
+                      "namespace": "com.optum.exts.eligibility.model.membership",
+                      "fields": [
+                        {
+                          "name": "restrictionIndicator",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "doc": "A boolean value indication whether the restriction is true or false.",
+                          "default": null
+                        },
+                        {
+                          "name": "restrictionType",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "doc": "The name of the restriction type. Each restriction type controls what actions the Hold Code requires in regards to processing.",
+                          "default": null
+                        }
+                      ],
+                      "default": null
+                    }
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "holdType",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DescriptionType"
+                ],
+                "doc": "Hold codes defined by the business. Each hold code has an array of restrictions that apply to it.",
+                "default": null
+              },
+              {
+                "name": "lastUpdated",
+                "type": [
+                  "null",
+                  {
+                    "type": "record",
+                    "name": "LastUpdated",
+                    "namespace": "com.optum.exts.eligibility.model.common",
+                    "doc": "Information about the last update made to a given entity.",
+                    "fields": [
+                      {
+                        "name": "sourceSystemTimestamp",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "doc": "The last time the entity was updated on the source system (CDB ROW_TMSTMP) in format (UTC timezone): CCYY-MM-DDThh:mm:ss.sssZ",
+                        "default": null
+                      },
+                      {
+                        "name": "sourceTimestamp",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "doc": "The last time the entity was updated on the originating source (CDB SRC_TMSTMP) in format (UTC timezone): CCYY-MM-DDThh:mm:ss.sssZ",
+                        "default": null
+                      },
+                      {
+                        "name": "userId",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "doc": "The last person or application to update the entity.",
+                        "default": null
+                      }
+                    ]
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "terminationDate",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "doc": "The end date for the hold.",
+                "default": null
+              }
+            ],
+            "default": null
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "individualIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "The unique key for an individual from a specific source (e.g. PART_NBR + CNSM_ID + SRC_CD + LGCY_SRC_ID)",
+      "default": null
+    },
+    {
+      "name": "lastPremiumPaidDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "lastUpdated",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.LastUpdated"
+      ],
+      "default": null
+    },
+    {
+      "name": "lateEnrollCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "legacyAttributes",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "MembershipLegacyAttributes",
+          "namespace": "com.optum.exts.eligibility.model.membership",
+          "fields": [
+            {
+              "name": "cancelReasonType",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "coverageLevel",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "governmentProgramType",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "railRoadBenefitGroupChoiceTxt",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "railRoadBenefitGroupNumberId",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "railRoadBranchRepresentativeCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "railRoadOptOutPlanIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "railRoadUnionCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "stateIssueCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "travelBenefitIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "lifeAndDisability",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "LifeAndDisability",
+          "namespace": "com.optum.exts.eligibility.model.membership",
+          "fields": [
+            {
+              "name": "acceleratedDeathBenefit",
+              "type": [
+                "null",
+                {
+                  "type": "record",
+                  "name": "AcceleratedDeathBenefit",
+                  "namespace": "com.optum.exts.eligibility.model.membership",
+                  "fields": [
+                    {
+                      "name": "effectiveDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "doc": "Date format: CCYY-MM-DD",
+                      "default": null
+                    },
+                    {
+                      "name": "payoutAmount",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "status",
+                      "type": [
+                        "null",
+                        "com.optum.exts.eligibility.model.common.DescriptionType"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "ageReductionAppliedAge",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Last age achieved when reduction was applied.",
+              "default": null
+            },
+            {
+              "name": "ageReductionAppliedPercent",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Percent used to reduce benefit when age reduction is met.",
+              "default": null
+            },
+            {
+              "name": "approvedAmount",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Subscriber's maximum approved benefit amount at plan level.",
+              "default": null
+            },
+            {
+              "name": "coverageStatus",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "evidenceOfInsurabilityStatusCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "evidenceOfInsurabilityStatusDate",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Date format: CCYY-MM-DD",
+              "default": null
+            },
+            {
+              "name": "insuredAmount",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "lateEntrantStatus",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "planCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "requestedAmount",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Amount the member is requesting.",
+              "default": null
+            },
+            {
+              "name": "salaryBenefitMultiplierFactor",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Selected valid amounts associated with plan code.",
+              "default": null
+            },
+            {
+              "name": "waiverOfPremiumEffectiveDate",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Date format: CCYY-MM-DD",
+              "default": null
+            },
+            {
+              "name": "waiverOfPremiumIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Indicates a member has been approved for a waiver of premium.",
+              "default": null
+            },
+            {
+              "name": "waiverOfPremiumTerminationDate",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Date format: CCYY-MM-DD",
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "marketSegment",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "doc": "Market segment for the coverage.",
+      "default": null
+    },
+    {
+      "name": "marketType",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "medicareAndRetirementMembershipProfiles",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "MedicareAndRetirementMembershipProfile",
+            "namespace": "com.optum.exts.eligibility.model.medicareandretirement",
+            "fields": [
+              {
+                "name": "copayCategory",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DescriptionType"
+                ],
+                "default": null
+              },
+              {
+                "name": "credibleCoverageIndicator",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "familyIdentifier",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "lepChangeReasonName",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "lepReconsiderLetterDate",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "lowIncomePremiumSubsidyPct",
+                "type": [
+                  "null",
+                  "int"
+                ],
+                "default": null
+              },
+              {
+                "name": "netLepAmount",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "profileDates",
+                "type": [
+                  "null",
+                  {
+                    "type": "record",
+                    "name": "DateRangeType",
+                    "namespace": "com.optum.exts.eligibility.model.common",
+                    "fields": [
+                      {
+                        "name": "startDate",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "doc": "Date format: CCYY-MM-DD",
+                        "default": null
+                      },
+                      {
+                        "name": "endDate",
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "doc": "Date format: CCYY-MM-DD",
+                        "default": null
+                      }
+                    ]
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "subsidySource",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DescriptionType"
+                ],
+                "default": null
+              },
+              {
+                "name": "uncoveredMonthDates",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DateRangeType"
+                ],
+                "default": null
+              },
+              {
+                "name": "uncoveredMonths",
+                "type": [
+                  "null",
+                  "int"
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "medicareAndRetirementPassportProfiles",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "MedicareAndRetirementPassportProfile",
+            "namespace": "com.optum.exts.eligibility.model.medicareandretirement",
+            "fields": [
+              {
+                "name": "passportDates",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DateRangeType"
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "memberDeliveryPreferences",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "MemberDeliveryPreference",
+            "namespace": "com.optum.exts.eligibility.model.membership",
+            "fields": [
+              {
+                "name": "deliveryType",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DescriptionType"
+                ],
+                "default": null
+              },
+              {
+                "name": "fulfillmentIdentifier",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "preferenceDates",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DateRangeType"
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "memberEnrollmentOtherIdentifiers",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "MemberEnrollmentOtherIdentifier",
+            "namespace": "com.optum.exts.eligibility.model.membership",
+            "fields": [
+              {
+                "name": "active",
+                "type": "boolean",
+                "default": false
+              },
+              {
+                "name": "effectiveDate",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "doc": "Date format: CCYY-MM-DD",
+                "default": null
+              },
+              {
+                "name": "terminationDate",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "doc": "Date format: CCYY-MM-DD",
+                "default": null
+              },
+              {
+                "name": "typeCode",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "value",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "memberGroupContractPlanOptionId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Cirrus Member Group Contract Plan Option identifier.",
+      "default": null
+    },
+    {
+      "name": "memberMarketNumber",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "membershipGroupData",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "MembershipGroupData",
+            "namespace": "com.optum.exts.eligibility.model.membership",
+            "fields": [
+              {
+                "name": "effectiveDates",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DateRangeType"
+                ],
+                "default": null
+              },
+              {
+                "name": "groupName",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "groupNumber",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "masterGroup",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "sourceSystem",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "membershipIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "The unique key for a Membership (e.g. COVERAGE_TYPE + POLICY_NBR + EFFECTIVE_DATE)",
+      "default": null
+    },
+    {
+      "name": "organization",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "Organization",
+          "namespace": "com.optum.exts.eligibility.model",
+          "doc": "Employer information on the account",
+          "fields": [
+            {
+              "name": "organizationIdentifier",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "planVariationCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "reportingCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "organizationIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "organizationPopulationGroupNumber",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "packageBenefitPlanCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "packageOptionDescription",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Benefit Bundle Option Description.",
+      "default": null
+    },
+    {
+      "name": "packageOptionId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Package Option Identifier.",
+      "default": null
+    },
+    {
+      "name": "panelNumber",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "passportGroupNumber",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "parentMembershipIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "pcpMedicalDirectorApprovalIndicator",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Override to allow specialist to be primary physician.",
+      "default": null
+    },
+    {
+      "name": "plan",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "Plan",
+          "namespace": "com.optum.exts.eligibility.model",
+          "fields": [
+            {
+              "name": "designatedNetwork",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "The default healthcare network assigned to the plan.",
+              "default": null
+            },
+            {
+              "name": "employerGroupIndicator",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "fundingArrangement",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "doc": "Identifies the financial arrangements between UHG and Customers.",
+              "default": null
+            },
+            {
+              "name": "name",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "networkProviderRelationshipIdentifier",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Identifier used to link the plan provider (and their agreement) to one or more product structures for use in identifying pricing arrangements.",
+              "default": null
+            },
+            {
+              "name": "networkScheduleIdentifier",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Identifies the network schedule used by the benefit bundle option.",
+              "default": null
+            },
+            {
+              "name": "optionDescription",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Description for the plan option.",
+              "default": null
+            },
+            {
+              "name": "optionId",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "Identifier of the plan option.",
+              "default": null
+            },
+            {
+              "name": "planCategoryName",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "planCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "planDescription",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "planTypeDescription",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "planTypeIdentifier",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "planTypeName",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "riderBit",
+              "type": [
+                "null",
+                "int"
+              ],
+              "default": null
+            },
+            {
+              "name": "security",
+              "type": [
+                "null",
+                {
+                  "type": "record",
+                  "name": "Security",
+                  "namespace": "com.optum.exts.eligibility.model.common",
+                  "fields": [
+                    {
+                      "name": "securitySourceSystemCode",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "securityPermission",
+                      "doc": "Superset of Security permissions",
+                      "type": [
+                        "null",
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "SecurityPermission",
+                            "namespace": "com.optum.exts.eligibility.model.common",
+                            "fields": [
+                              {
+                                "name": "securityPermissionValue",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null,
+                                "doc": "A security attribute identifying the secure class under which the record instance is administered."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "securityPermissionAny",
+                      "doc": "Subset of security permissions This is used for source systems that require at least one permission from the superset of permissions to be present.",
+                      "type": [
+                        "null",
+                        {
+                          "type": "array",
+                          "items": "com.optum.exts.eligibility.model.common.SecurityPermission"
+                        }
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "sourceSystemCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "versionNumber",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "The version of the plan.",
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "planCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "product",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "Product",
+          "namespace": "com.optum.exts.eligibility.model",
+          "fields": [
+            {
+              "name": "businessLineTypeCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "categoryType",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "healthCoverageType",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "name",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "productCode",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null
+            },
+            {
+              "name": "serviceType",
+              "type": [
+                "null",
+                "com.optum.exts.eligibility.model.common.DescriptionType"
+              ],
+              "default": null
+            },
+            {
+              "name": "versionNumber",
+              "type": [
+                "null",
+                "string"
+              ],
+              "doc": "The version of the product.",
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "productCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "qmcsoIndicator",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Indicates if a Qualified Medical Child Support Order exists for this membership.",
+      "default": null
+    },
+    {
+      "name": "recordType",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "The type of this Membership; possible values: [ 'FINANCIAL_ACCOUNT', 'HEALTH_COVERAGE', 'HEALTH_SERVICE', 'LIFE_AND_DISABILITY' ]",
+      "default": null
+    },
+    {
+      "name": "relationshipType",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "default": null
+    },
+    {
+      "name": "riskGroupId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "riskGroupName",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "salesAgentIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "security",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.Security"
+      ],
+      "default": null
+    },
+    {
+      "name": "segmentId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "site",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "situsState",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "The state that the insurance product/policy is based out of for a particular employer.",
+      "default": null
+    },
+    {
+      "name": "sourceSystemAttributes",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "MembershipSourceSystemAttributes",
+          "namespace": "com.optum.exts.eligibility.model.membership",
+          "doc": "source-specific attributes about a membership",
+          "fields": [
+            {
+              "name": "cdb",
+              "type": [
+                "null",
+                {
+                  "type": "record",
+                  "name": "CdbMembershipSourceSystemAttributes",
+                  "namespace": "com.optum.exts.eligibility.model.cdb",
+                  "fields": [
+                    {
+                      "name": "cesGroupNumber",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "legacyProductCode",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "legacyProductId",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "nonCs",
+                      "type": [
+                        "null",
+                        {
+                          "type": "record",
+                          "name": "NonCsMembershipSourceSystemAttributes",
+                          "namespace": "com.optum.exts.eligibility.model.cdb",
+                          "fields": [
+                            {
+                              "name": "legalEntityName",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            }
+                          ]
+                        }
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "referenceData",
+                      "type": [
+                        "null",
+                        {
+                          "type": "record",
+                          "name": "CdbMembershipReferenceData",
+                          "namespace": "com.optum.exts.eligibility.model.cdb",
+                          "fields": [
+                            {
+                              "name": "coverageLevelTypeCode",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "coveragePaidThruReasonCode",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "coverageTypeCode",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "healthServiceProductCode",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "healthServiceProductLineCode",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            }
+                          ]
+                        }
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "crossCarrier",
+              "type": [
+                "null",
+                {
+                  "type": "record",
+                  "name": "CrossCarrierMembershipSourceSystemAttributes",
+                  "namespace": "com.optum.exts.eligibility.model.crosscarrier",
+                  "fields": [
+                    {
+                      "name": "carrierName",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "fileName",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "pKey",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "medicareAndRetirement",
+              "type": [
+                "null",
+                {
+                  "type": "record",
+                  "name": "MedicareAndRetirementMembershipSourceSystemAttributes",
+                  "namespace": "com.optum.exts.eligibility.model.medicareandretirement",
+                  "fields": [
+                    {
+                      "name": "conservationReason",
+                      "type": [
+                        "null",
+                        "com.optum.exts.eligibility.model.common.DescriptionType"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "electionType",
+                      "type": [
+                        "null",
+                        "com.optum.exts.eligibility.model.common.DescriptionType"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "enrollmentSource",
+                      "type": [
+                        "null",
+                        "com.optum.exts.eligibility.model.common.DescriptionType"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "marketProductName",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "regionPlanIdentifier",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "terminationReason",
+                      "type": [
+                        "null",
+                        "com.optum.exts.eligibility.model.common.DescriptionType"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              ],
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "sourceSystemCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "sourceTerminationDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "The date that the Consumer Plan is no longer active.",
+      "default": null
+    },
+    {
+      "name": "subscriberIndividualIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "subscriberMemberFacingIdentifier",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "External facing identifier, such as an ID printed on a membership card, used to identify a subscriber, at the level of the enrollee.",
+      "default": null
+    },
+    {
+      "name": "subscriberSocialSecurityNumber",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Social Security Number of the plan subscriber.",
+      "default": null
+    },
+    {
+      "name": "subsidizedInsuredPlans",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "SubsidizedInsuredPlan",
+            "namespace": "com.optum.exts.eligibility.model.membership",
+            "fields": [
+              {
+                "name": "branchIdentifier",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              },
+              {
+                "name": "subsidizedInsuredPlanDates",
+                "type": [
+                  "null",
+                  "com.optum.exts.eligibility.model.common.DateRangeType"
+                ],
+                "default": null
+              },
+              {
+                "name": "subsidizedInsuredPlanIdentifier",
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "terminationDate",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "Date format: CCYY-MM-DD",
+      "default": null
+    },
+    {
+      "name": "terminationReason",
+      "type": [
+        "null",
+        "com.optum.exts.eligibility.model.common.DescriptionType"
+      ],
+      "doc": "The reason the membership was terminated.",
+      "default": null
+    }
+  ]
+}

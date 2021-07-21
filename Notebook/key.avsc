@@ -1,0 +1,19 @@
+{
+   "type":"record",
+   "name":"EligibilityKey",
+   "namespace":"com.optum.exts.eligibility.model",
+   "fields":[
+      {
+         "name":"individualIdentifier",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"The unique key for an individual from a specific source (e.g. PART_NBR + CNSM_ID + SRC_CD + LGCY_SRC_ID)",
+         "default":null
+      }
+   ]
+}
